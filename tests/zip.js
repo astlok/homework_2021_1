@@ -107,4 +107,13 @@ QUnit.module('Тестируем функцию zip', function () {
 		}
 		assert.deepEqual(zip({name: 'Pavel', town: 'Moscow'}, {age: 45, student: false}, {car: 'Volvo', phone:true}, {name: 'Petya', age: 41}), zip(obj,obj2));
 	});
+
+	QUnit.test('Функция корректно работает, если в нее передавать аргументы, отличные от объектов', function (assert) {
+		assert.deepEqual(zip('Pavel', 45), {});
+
+		assert.deepEqual(zip('Pavel', 45, {name: 'Pavel'}), {name: 'Pavel'});
+
+		assert.deepEqual(zip('Pavel', 45, {name: 'Pavel'}, [1, 2, 3]), {name: 'Pavel'});
+	});
 });
+
