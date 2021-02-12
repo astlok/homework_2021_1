@@ -11,7 +11,7 @@
 
 const zip = (...args) => {
 	const result = {};
-	args.forEach((item, index, array) => {
+	args.forEach((item) => {
 		if (typeof item !== 'object' || Array.isArray(item) || !item ) {
 			return;
 		}
