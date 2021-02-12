@@ -12,7 +12,7 @@
 const zip = (...args) => {
 	const result = {};
 	args.forEach((item, index, array) => {
-		if ({}.toString.call(item).slice(8, -1) != 'Object') {
+		if (typeof item !== 'object' || Array.isArray(item) || item === null) {
 			return;
 		}
 		Object.keys(item).forEach((key) => {
