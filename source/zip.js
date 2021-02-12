@@ -12,7 +12,7 @@
 const zip = (...args) => {
 	const result = {};
 	args.forEach((item, index, array) => {
-		if (typeof item !== 'object' || Array.isArray(item) || item === null) {
+		if (typeof item !== 'object' || Array.isArray(item) || !item ) {
 			return;
 		}
 		Object.keys(item).forEach((key) => {

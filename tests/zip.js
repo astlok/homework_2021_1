@@ -114,6 +114,8 @@ QUnit.module('Тестируем функцию zip', function () {
 		assert.deepEqual(zip('Pavel', 45, {name: 'Pavel'}), {name: 'Pavel'});
 
 		assert.deepEqual(zip('Pavel', 45, {name: 'Pavel'}, [1, 2, 3]), {name: 'Pavel'});
+
+		assert.deepEqual(zip('Pavel', 45, {name: 'Pavel'}, [1, 2, 3], null), {name: 'Pavel'});
 	});
 });
 
