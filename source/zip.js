@@ -8,18 +8,18 @@
   *
   *  zip({name: 'Pavel', age 42}, {town: 'Moscow', car: 'Volvo'});
   */
-  
-let zip = (...args) => {
+
+const zip = (...args) => {
 	const result = {};
-	args.forEach(function(item, index, array) {
+	args.forEach((item, index, array) => {
 		if ({}.toString.call(item).slice(8, -1) != 'Object') {
 			return;
 		}
-		for (let key of Object.keys(item)) {
+		Object.keys(item).forEach((key) => {
 			if (!(key in result)) {
 				result[key] = item[key];
 			}
-		}
+		});
 	});
  	return result;
 };
